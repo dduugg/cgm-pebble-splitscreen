@@ -78,7 +78,7 @@ static void sync_error_callback(DictionaryResult dict_error, AppMessageResult ap
 	text_layer_set_text(name_2_layer, "Toggle to Reload");
 	text_layer_set_text(name_layer, "Data: OFFLINE");
 
-	vibes_double_pulse();
+	// vibes_double_pulse();
 }
 
 static void alert_handler(uint8_t alertValue)
@@ -88,45 +88,45 @@ static void alert_handler(uint8_t alertValue)
 
 	APP_LOG(APP_LOG_LEVEL_DEBUG, "Alert code: %d", alertValue);
 
-	switch (alertValue){
-		//No alert
-	case 0:
-		break;
+	// switch (alertValue){
+	// 	//No alert
+	// case 0:
+	// 	break;
 
-		//Normal (new data, in range, trend okay)
-	case 1:
-		vibes_double_pulse();
-		break;
+	// 	//Normal (new data, in range, trend okay)
+	// case 1:
+	// 	vibes_double_pulse();
+	// 	break;
 
-		//Low
-	case 2:;
-		VibePattern lowpat = {
-			.durations = low,
-			.num_segments = ARRAY_LENGTH(low),
-		};
-		vibes_enqueue_custom_pattern(lowpat);
-		break;
+	// 	//Low
+	// case 2:;
+	// 	VibePattern lowpat = {
+	// 		.durations = low,
+	// 		.num_segments = ARRAY_LENGTH(low),
+	// 	};
+	// 	vibes_enqueue_custom_pattern(lowpat);
+	// 	break;
 
-		//High
-	case 3:;
-		VibePattern highpat = {
-			.durations = high,
-			.num_segments = ARRAY_LENGTH(high),
-		};
-		vibes_enqueue_custom_pattern(highpat);
-		break;
+	// 	//High
+	// case 3:;
+	// 	VibePattern highpat = {
+	// 		.durations = high,
+	// 		.num_segments = ARRAY_LENGTH(high),
+	// 	};
+	// 	vibes_enqueue_custom_pattern(highpat);
+	// 	break;
 
-		//Hypo
+	// 	//Hypo
 
-		//Hyper
+	// 	//Hyper
 
-		//Trend Low
+	// 	//Trend Low
 
-		//Trend High
+	// 	//Trend High
 
-		//Data Alert
+	// 	//Data Alert
 
-	}
+	// }
 
 }
 
